@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onclick="PlayAudio()">
+<audio id="musica1" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div style="border: 2px solid black; padding: 10px; background-color: rgba(159, 187, 224, 0.5);">
+    <h1>Numero de usuarios de la estación de Canfranc</h1>
+    <h2 id="count-el">0</h2>
+    <button id="increment-btn" onclick="increment()">SUMA GENTE</button>
+    <button id="decrement-btn" onclick="decrement()">RESTA GENTE</button>
+    <button id="save-btn" onclick="save()">GUARDAR</button>
+    <p id="save-el">Entradas anteriores:</p><br></br>
+  
+<div id="fecha_actual"></div>
+<script>
+    function mostrarFechaHora() {
+        const ahora = new Date();
+        const fechaHora = ahora.toLocaleString();
+
+        document.getElementById("fecha_actual").textContent = fechaHora;
+    }
+
+    mostrarFechaHora();
+    setInterval(mostrarFechaHora, 1000);
+
+</script>
+    <script src="index.js"></script>
+</div>
+
+<div style="border: 2px solid black; padding: 10px; background-color: rgba(159, 187, 224, 0.5);">
+    <h1>Viaja a otros lugares:</h1>
+
+
+    <div class="caja c4">
+        <div class="container2">
+            <a href="https://www.renfe.com/es/es/experiencias/destinos-imprescindibles/madrid" class="container2">
+            <div class="cuadradito c-1">
+                <p class="nombreproducto">Madrid</p>
+                <p class="fotoproducto"><img src="madrid.jpg"></p>
+            </div>
+            </a>
+            <div class="cuadradito c-2">
+            <a href="https://www.renfe.com/es/es/experiencias/escapate-en-tren/albacete">
+                <p class="nombreproducto">Albacete</p>
+                <p class="fotoproducto"><img src="albacete.jpg"></p>
+            </a>
+            </div>
+            <div class="cuadradito c-3">
+            <a href="https://www.renfe.com/es/es/experiencias/escapate-en-tren/girona">
+                <p class="nombreproducto">Girona</p>
+                <p class="fotoproducto"><img src="girona.jpg"></p>
+            </a>
+            </div>
+            <div class="cuadradito c-4">
+            <a href="https://www.renfe.com/es/es/experiencias/escapate-en-tren/granada">
+                <p class="nombreproducto">Granada</p>
+                <p class="fotoproducto"><img src="granada.jpg"></p>
+            </a>
+            </div>
+            <div class="cuadradito c-5">
+            <a href="https://www.renfe.com/es/es/experiencias/escapate-en-tren/alicante">
+                <p class="nombreproducto">Alicante</p>
+                <p class="fotoproducto"><img src="alicante.jpg"></p>
+            </a>
+            </div>
+        </div>
+
+    
+        </div>
+    </div>
+
+
+
+
+    
+    <div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: rgba(159, 187, 224, 0.5);; border-radius: 10px;">
+        <h1 style="text-align: center; margin-bottom: 20px;">Compra de Billetes de Tren</h1>
+        
+        <label for="destinos" style="display: block;">Selecciona tu destino:</label>
+        <select id="destinos" onchange="seleccionarDestino()" style="margin-bottom: 10px; width: 30%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <option value="">- Selecciona un destino -</option>
+            <option value="madrid">Madrid</option>
+            <option value="albacete">Albacete</option>
+            <option value="girona">Girona</option>
+            <option value="granada">Granada</option>
+            <option value="alicante">Alicante</option>
+        </select>
+    
+            <div id="detalles-destino" style="display: none; margin-top: 20px; padding: 10px; background-color: rgba(159, 187, 224, 0.1);; border-radius: 5px;">
+                <h1 id="nombre-destino"></h1>
+                <p id="descripcion-destino"></p>
+                <label for="cantidad-billetes" style="display: block;">Cantidad de billetes:</label>
+                <input type="number" id="cantidad-billetes" min="1" onchange="calcularPrecioTotal()" style="margin-bottom: 10px; width: 10%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+                <p id="precio-total" style="font-weight: bold; margin-top: 10px;"></p>
+                <button onclick="comprar()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Comprar</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    <script>
+        function PlayAudio() {
+            document.getElementById("musica1").play();
+        }
+    </script>
+
+</body>
+</html>
